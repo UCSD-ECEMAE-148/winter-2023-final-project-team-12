@@ -1,0 +1,5 @@
+controller_node:
+  ros__parameters:
+    stop_threshold: 150
+    zero_steer: 0.0
+    zero_throttle: 0.0

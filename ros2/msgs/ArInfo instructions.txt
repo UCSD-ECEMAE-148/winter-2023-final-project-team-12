@@ -1,0 +1,28 @@
+reference https://docs.ros.org/en/foxy/Tutorials/Beginner-Client-Libraries/Custom-ROS2-Interfaces.html
+
+instructions to create the ArInfo msg type in ros2
+
+ros2 pkg create --build-type ament_cmake custom_msgs
+cd custom_msgs
+mkdir msg
+touch ArInfo.msg
+file contents:
+int32[] ids
+float32[] corners
+
+add to CMakeLists.txt before ament_make():
+find_package(rosidl_default_generators REQUIRED)
+rosidl_generate_interfaces(${PROJECT_NAME}
+  "msg/ArInfo.msg"
+)
+
+add to package.xml:
+<build_depend>rosidl_default_generators</build_depend>
+
+<exec_depend>rosidl_default_runtime</exec_depend>
+
+<member_of_group>rosidl_interface_packages</member_of_group>
+
+build_ros2
+ros2 interface show custom_msgs/msg/ArInfo
+if not showing up, try source_ros2 or building again
