@@ -7,7 +7,7 @@ import os
 
 NODE_NAME = 'lane_guidance_node'
 CENTROID_TOPIC_NAME = '/centroid'
-ACTUATOR_TOPIC_NAME = '/cmd_vel'
+ACTUATOR_TOPIC_NAME = '/lane/cmd_vel'
 
 
 class PathPlanner(Node):

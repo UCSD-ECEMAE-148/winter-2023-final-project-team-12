@@ -127,7 +127,7 @@ class Controller(Node):
                 self.twist_cmd.angular.z = float(steer)
                 adjusted_sleep_time = sleep_time/sleep_count
                 sleep_start = time.time()
-                # vesc shutsoff after a second or so. This a
+                # vesc shuts off throttle after not getting instructions for a bit. This allows for longer run times
                 for _ in range(sleep_count):
                     self.twist_publisher.publish(self.twist_cmd)
                     time.sleep(adjusted_sleep_time)
