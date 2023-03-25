@@ -17,10 +17,10 @@ We want to create a sorter bot similar to warehouse bots that picks up a package
 Our code is running on ROS2 and is modified based on the provided lane following code from class. The following flowchart shows the original relationship between each component in the provided lane following code from class:
 ![](misc/comp_soft_old.jpg)
 
-We added an independent package used for detecting AR tag, read states from AR tag, and changing lane detector's behavior.
+We added a node responsible for detecting AR tag, read states from AR tag, and changing lane detector's behavior.
 ![](misc/comp_soft_new.jpg)
 
-In our new package, we have defined two types of AR tags:
+In our new node, we have defined two types of AR tags:
 
 - Type 1: Declares the lane color our bot should follow
 - Type 2: Stop signal that indicates the bot to drop the package
@@ -50,4 +50,4 @@ We designed a bracket as package holder that snaps on the front bumper of the ca
 
 ## Remarks
 
-Our video demonstrated our bot's capability of detecting AR tag, selecting the corresponding lane color, following path to dropoff zone, dropping off package in front of stop sign, and return to the starting point. Potential improvements for this project including adding obstacle avoidance, redesigning the package holder to hold the package above ground, adjusting camera position for better view angle of the lane, and adding capability to navigate through multiple junctions.
+Our video demonstrated our bot's capability of detecting AR tag, selecting the corresponding lane color, following path to dropoff zone, dropping off package in front of stop sign, and return to the starting point. Potential improvements for this project includes adding obstacle avoidance, redesigning the package holder to hold the package above ground, adjusting camera position for better view angle of the lane, and adding capability to navigate through multiple junctions.
